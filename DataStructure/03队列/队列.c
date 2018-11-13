@@ -8,17 +8,17 @@
 #define ERROR 0
 #define TRUE 1
 #define FALSE 0
-#define MAXSIZE 11 //åˆå§‹å®¹é‡
+#define MAXSIZE 11 //³õÊ¼ÈİÁ¿
 
 typedef int Status;
-typedef int QElemType; //å®šä¹‰æ•°æ®ç±»å‹
+typedef int QElemType; //¶¨ÒåÊı¾İÀàĞÍ
 
-//å¾ªç¯é˜Ÿåˆ—çš„é¡ºåºå­˜å‚¨ç»“æ„
+//Ñ­»·¶ÓÁĞµÄË³Ğò´æ´¢½á¹¹
 typedef struct
 {
     QElemType data[MAXSIZE];
-    int front; //å¤´æŒ‡é’ˆ
-    int rear;  //å°¾æŒ‡é’ˆï¼Œé˜Ÿåˆ—éç©ºæ—¶ï¼ŒæŒ‡å‘é˜Ÿå°¾å…ƒç´ çš„ä¸‹ä¸€ä¸ªä½ç½®
+    int front; //Í·Ö¸Õë
+    int rear;  //Î²Ö¸Õë£¬¶ÓÁĞ·Ç¿ÕÊ±£¬Ö¸Ïò¶ÓÎ²ÔªËØµÄÏÂÒ»¸öÎ»ÖÃ
 } SqQueue;
 
 Status visit(QElemType item)
@@ -27,7 +27,7 @@ Status visit(QElemType item)
     return OK;
 }
 
-//åˆå§‹åŒ–ç©ºé˜Ÿåˆ—
+//³õÊ¼»¯¿Õ¶ÓÁĞ
 Status InitQueue(SqQueue *sQ)
 {
     sQ->front = 0;
@@ -35,14 +35,14 @@ Status InitQueue(SqQueue *sQ)
     return OK;
 }
 
-//å°†é˜Ÿåˆ—æ¸…ç©º
+//½«¶ÓÁĞÇå¿Õ
 Status ClearQueue(SqQueue *Q)
 {
     Q->front = Q->rear = 0;
     return OK;
 }
 
-//åˆ¤æ–­é˜Ÿåˆ—æ˜¯å¦ä¸ºnull
+//ÅĞ¶Ï¶ÓÁĞÊÇ·ñÎªnull
 Status QueueEmpty(SqQueue Q)
 {
     if (Q.front == Q.rear)
@@ -51,43 +51,43 @@ Status QueueEmpty(SqQueue Q)
         return FALSE;
 }
 
-//è¿”å›é˜Ÿåˆ—ä¸­çš„å…ƒç´ ä¸ªæ•°
+//·µ»Ø¶ÓÁĞÖĞµÄÔªËØ¸öÊı
 int QueueLength(SqQueue Q)
 {
     return (Q.rear - Q.front + MAXSIZE) % MAXSIZE;
 }
 
-//è¿”å›é˜Ÿå¤´å…ƒç´ 
+//·µ»Ø¶ÓÍ·ÔªËØ
 Status GetHead(SqQueue Q, QElemType *e)
 {
-    if (Q.front == Q.rear) //æ˜¯å¦ä¸ºç©ºé˜Ÿåˆ—
+    if (Q.front == Q.rear) //ÊÇ·ñÎª¿Õ¶ÓÁĞ
         return ERROR;
     *e = Q.data[Q.front];
     return OK;
 }
 
-//åœ¨é˜Ÿå°¾æ’å…¥å…ƒç´ 
+//ÔÚ¶ÓÎ²²åÈëÔªËØ
 Status EnQueue(SqQueue *Q, QElemType e)
 {
-    if ((Q->rear + 1) % MAXSIZE == Q->front) //é˜Ÿåˆ—å·²æ»¡
+    if ((Q->rear + 1) % MAXSIZE == Q->front) //¶ÓÁĞÒÑÂú
         return ERROR;
 
-    Q->data[Q->rear] = e;              //æ’å…¥é˜Ÿå°¾
-    Q->rear = (Q->rear + 1) % MAXSIZE; //å°¾éƒ¨æŒ‡é’ˆåç§»ï¼Œå¦‚æœåˆ°æœ€ååˆ™è½¬åˆ°å¤´éƒ¨
+    Q->data[Q->rear] = e;              //²åÈë¶ÓÎ²
+    Q->rear = (Q->rear + 1) % MAXSIZE; //Î²²¿Ö¸ÕëºóÒÆ£¬Èç¹ûµ½×îºóÔò×ªµ½Í·²¿
     return OK;
 }
 
-//å…ƒç´ å‡ºé˜Ÿ
+//ÔªËØ³ö¶Ó
 Status DeQueue(SqQueue *Q, QElemType *e)
 {
-    if (Q->front == Q->rear) //é˜Ÿåˆ—ç©º
+    if (Q->front == Q->rear) //¶ÓÁĞ¿Õ
         return ERROR;
-    *e = Q->data[Q->front];              //è¿”å›é˜Ÿå¤´å…ƒç´ 
-    Q->front = (Q->front + 1) % MAXSIZE; //é˜Ÿå¤´æŒ‡é’ˆåç§»ï¼Œå¦‚åˆ°æœ€åè½¬åˆ°å¤´éƒ¨
+    *e = Q->data[Q->front];              //·µ»Ø¶ÓÍ·ÔªËØ
+    Q->front = (Q->front + 1) % MAXSIZE; //¶ÓÍ·Ö¸ÕëºóÒÆ£¬Èçµ½×îºó×ªµ½Í·²¿
     return OK;
 }
 
-//éå†é˜Ÿåˆ—å…ƒç´ 
+//±éÀú¶ÓÁĞÔªËØ
 Status QueueTraverse(SqQueue Q)
 {
     int i = Q.front;
@@ -109,14 +109,14 @@ int main()
     SqQueue Q;
     InitQueue(&Q);
 
-    //å…¥é˜Ÿï¼‘ï¼ä¸ªå…ƒç´ 
+    //Èë¶Ó£±£°¸öÔªËØ
     for (int i = 0; i < MAXSIZE - 1; i++)
     {
         EnQueue(&Q, i);
     }
     QueueTraverse(Q);
 
-    printf("ä¾æ¬¡å‡ºé˜Ÿ:");
+    printf("ÒÀ´Î³ö¶Ó:");
     for (l = 1; l <= MAXSIZE; l++)
     {
         DeQueue(&Q, &d);
