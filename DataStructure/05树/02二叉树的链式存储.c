@@ -18,3 +18,12 @@
 //①如果i=1，则结点i是二叉树的根，无双亲；如果i>1，则其双亲是结点⌊i/2⌋
 //②如果2i>n，则结点i无左孩子(结点i为叶子结点)；否则其左孩子是结点2i
 //③如果2i+1>n，则结点i无左孩子；否则其有孩子是结点2i+1
+#include <stdio.h>
+#include <stdlib.h>
+typedef char ElemType; 
+
+typedef struct BiNode
+{
+    ElemType data;
+    struct BiNode *lchild, *rchild;
+} BiTNode, *BiTree;
