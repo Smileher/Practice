@@ -17,13 +17,13 @@ typedef struct BiNode
     struct BiNode *lchild, *rchild;
 } BiTNode, *BiTree;
 
-//创建一颗二叉树,用户需要按照前序遍历输入二叉树的数据
+//创建一颗二叉树,用户需要按照前序遍历输入二叉树的数据，空位置用#代替
 CreateBiTree(BiTree *T)
 {
     char c;
     scanf("%c", &c);
 
-    if (' ' == c)
+    if ('#' == c)
     {
         *T = NULL;
     }
@@ -54,7 +54,8 @@ int main(void)
 {
     int level = 1;
     BiTree T = NULL;
-    printf("请输入一个前序遍历的二叉树：\n");
+    //AB#D##CE###
+    printf("请输入一个前序遍历的二叉树（必须用完全二叉树的形式表示，用#代替空位置）：\n");
     CreateBiTree(&T);
     PreOrderTraverse(T, level);
     return 0;
