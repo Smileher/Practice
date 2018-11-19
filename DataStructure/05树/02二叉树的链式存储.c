@@ -22,8 +22,13 @@
 #include <stdlib.h>
 typedef char ElemType; 
 
-typedef struct BiNode
+typedef struct BiTNode
 {
     ElemType data;
-    struct BiNode *lchild, *rchild;
+    struct BiTNode *lchild, *rchild;
 } BiTNode, *BiTree;
+
+int main(void)
+{
+    return 0;
+}
