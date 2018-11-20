@@ -3,6 +3,8 @@
 //后序遍历：左右根
 //层序遍历：从上而下，从左到右
 //已知前序和后序遍历，不能确定一颗二叉树
+
+//程序代码：输入一个前序序列的二叉树，输出每个元素所在的层数
 #include <stdio.h>
 #include <stdlib.h>
 #define OK 1
@@ -101,7 +103,7 @@ int main(void)
     int level = 1;
     BiTree T = NULL;
     //AB#D##CE###
-    printf("请输入一个前序遍历的二叉树（必须用完全二叉树的形式表示，用#代替空位置）：\n");
+    printf("请输入一个前序遍历的二叉树（用#代替空位置）例如：AB#D##CE###：\n");
     CreateBiTree1(&T);
     PreOrderTraverse(T, level);
     return 0;
