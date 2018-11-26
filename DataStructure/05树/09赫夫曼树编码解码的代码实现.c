@@ -1,4 +1,3 @@
-
 //C语言代码实现赫夫曼树的编码解码
 #include <stdio.h>
 #include <stdlib.h>
