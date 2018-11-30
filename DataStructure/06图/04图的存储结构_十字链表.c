@@ -1,12 +1,19 @@
-//Orthogonal List
-//åå­—é“¾è¡¨æ˜¯æŠŠé‚»æŽ¥è¡¨å’Œé€†é‚»æŽ¥è¡¨ç›¸ç»“åˆ
-//é¡¶ç‚¹è¡¨
-//data firstin firstout
-//firstinå‡ºè¾¹è¡¨å¤´æŒ‡é’ˆ firstoutå…¥è¾¹è¡¨å¤´æŒ‡é’ˆ
+//Orthogonal ListÊ®×ÖÁ´±í
+//Ê®×ÖÁ´±íÊÇÓÐÏòÍ¼µÄÓÅ»¯´æ´¢½á¹¹£¬°ÑÁÚ½Ó±íºÍÄæÁÚ½Ó±íÏà½áºÏ
 
-//è¾¹è¡¨
+//¶¥µã±í
+//data firstin firstout
+//firstin³ö±ß±íÍ·Ö¸Õë firstoutÈë±ß±íÍ·Ö¸Õë
+
+//±ß±í
 //tailvex headvex headlink taillink
-//tailvexè¡¨ç¤ºå¼§èµ·ç‚¹åœ¨é¡¶ç‚¹è¡¨ä¸­çš„ä¸‹æ ‡
-//headvexè¡¨ç¤ºå¼§ç»ˆç‚¹åœ¨é¡¶ç‚¹è¡¨ä¸­çš„ä¸‹æ ‡
-//headlinkè¡¨ç¤ºå…¥è¾¹è¡¨æŒ‡é’ˆåŸŸï¼ŒæŒ‡å‘ç»ˆç‚¹ç›¸åŒçš„ä¸‹ä¸€æ¡è¾¹
-//taillinkè¡¨ç¤ºè¾¹è¡¨æŒ‡é’ˆåŸŸï¼ŒæŒ‡å‘èµ·ç‚¹ç›¸åŒçš„ä¸‹ä¸€æ¡è¾¹
+//tailvex±íÊ¾»¡ÆðµãÔÚ¶¥µã±íÖÐµÄÏÂ±ê
+//headvex±íÊ¾»¡ÖÕµãÔÚ¶¥µã±íÖÐµÄÏÂ±ê
+//headlink±íÊ¾Èë±ß±íÖ¸ÕëÓò£¬Ö¸ÏòÖÕµãÏàÍ¬µÄÏÂÒ»Ìõ±ß
+//taillink±íÊ¾±ß±íÖ¸ÕëÓò£¬Ö¸ÏòÆðµãÏàÍ¬µÄÏÂÒ»Ìõ±ß
+
+//Ê®×ÖÁ´±íµÄºÃ´¦¾ÍÊÇÒòÎª°ÑÁÚ½Ó±íºÍÄæÁÚ½Ó±íÕûºÏÔÚÁËÒ»Æð£¬
+//ÕâÑù¼ÈÈÝÒ×ÕÒµ½ÒÔViÎªÎ²µÄ»¡£¬Ò²ÈÝÒ×ÕÒµ½ÒÔViÎªÍ·µÄ»¡£¬
+//Òò¶øÈÝÒ×ÇóµÃ¶¥µãµÄ³ö¶ÈºÍÈë¶È¡£
+//¶øÇÒËü³ýÁË½á¹¹¸´ÔÓÒ»µãÍâ£¬ÆäÊµ´´½¨Í¼Ëã·¨µÄÊ±¼ä¸´ÔÓ¶ÈÊÇºÍÁÚ½Ó±íÏàÍ¬µÄ£¬
+//Òò´Ë£¬ÔÚÓÐÏòÍ¼µÄÓ¦ÓÃÖÐ£¬Ê®×ÖÁ´±íÊÇ·Ç³£ºÃµÄÊý¾Ý½á¹¹Ä£ÐÍ
