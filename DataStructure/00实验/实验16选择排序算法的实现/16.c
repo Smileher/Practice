@@ -2,13 +2,13 @@
  *班级：16计转本
  *姓名：陈贺
  *学号：20160566140
- *实验十四选择排序算法的实现
+ *实验十六选择排序算法的实现
  *****************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-#define NUM 20000
+#define NUM 10000
 int heapSize = 0;
 //获取随机数,方便打印阅读
 int *getRandNum(int n)
